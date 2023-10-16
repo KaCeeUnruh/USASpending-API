@@ -36,16 +36,19 @@
 <script>
     $('#fetchBtn').on('click', function() {
         $.getJSON('/fetch_data', function(data) {
+            if ($.fn.dataTable.isDataTable('#dataTable')) {
+                $('#dataTable').DataTable().clear().destroy();
+            }
             $('#dataTable').DataTable({
                 data: data,
                 columns: [
                     { data: 'agency_id'},
-                    { data: 'toptier_code'}
+                    { data: 'toptier_code'},
                     { data: 'agency_name' },
                     { data: 'abbreviation' },
                     { data: 'congressional_justification_url'},
                     { data: 'active_fy'},
-                    { data: 'active_fq'}
+                    { data: 'active_fq'},
                     { data: 'outlay_amount' },
                     { data: 'obligated_amount' },
                     { data: 'budget_authority_amount'},
