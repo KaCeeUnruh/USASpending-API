@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import requests
 
 app = Flask(__name__)
@@ -11,9 +11,7 @@ def index():
 def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
-    data = response.json()
-    return render_template("table.html", data=data['results'])
+    return jsonify(response.json()['results'])
 
-
-if __name__ == "__main__":
-    app.run()
+    if __name__ == '__main__':
+        app.run()
