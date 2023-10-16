@@ -1,4 +1,3 @@
-from flask import Flask, render_template, jsonify
 import dash
 import dash_bootstrap_components as dbc
 import dash_html_components as html
@@ -37,7 +36,13 @@ app.layout = dbc.Container([
                     {"name": "Percentage of Total Budget Authority", "id": "percentage_of_total_budget_authority"},
                     {"name": "Agency Slug", "id": "agency_slug"}
                 ],
-                data=[]
+                data=[],
+                style_table={
+                    'backgroundColor': 'grey',
+                },
+                style_cell={
+                    'backgroundColor': 'grey',
+                    'color': 'white',
             ),
         ])
     ])
