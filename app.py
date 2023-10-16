@@ -13,6 +13,11 @@ server = app.server  # This is for deployment
 app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
+            html.H1("USA Government Spending Data", className="text-center mt-4 mb-4"),
+        ])
+    ]),
+    dbc.Row([
+        dbc.Col([
             dbc.Button("Fetch Data", id="fetch-button", color="secondary", className="mr-2"),
         ])
     ]),
@@ -43,7 +48,13 @@ app.layout = dbc.Container([
                 style_cell={
                     'backgroundColor': 'grey',
                     'color': 'white',
-                }
+                },
+                filter_action="native",
+                sort_action="native",
+                sort_mode="multi",
+                page_action="native",
+                page_current=0,
+                page_size=10,
             ),
         ])
     ]),
