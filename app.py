@@ -6,14 +6,14 @@ import dash_table
 import requests
 
 # Set up the app with external stylesheets from dash-bootstrap-components
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 server = app.server  # This is for deployment
 
 # Define the app layout
 app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
-            dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mr-2"),
+            dbc.Button("Fetch Data", id="fetch-button", color="secondary", className="mr-2"),
         ])
     ]),
     html.Br(),
@@ -43,9 +43,10 @@ app.layout = dbc.Container([
                 style_cell={
                     'backgroundColor': 'grey',
                     'color': 'white',
+                }
             ),
         ])
-    ])
+    ]),
 ], fluid=True)
 
 # Define callback to update table data
