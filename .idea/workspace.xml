@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a568e3e-094f-4b57-90bd-747385124f48" name="Changes" comment="Cleanup3" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2WrHEFdkNQDZJre1q4hQltNnuTi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a568e3e-094f-4b57-90bd-747385124f48" name="Changes" comment="" />
+      <created>1697483664528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697483664528</updated>
+      <workItem from="1697483669247" duration="9506000" />
+      <workItem from="1697499565502" duration="231000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed Procfile and Requirements">
+      <option name="closed" value="true" />
+      <created>1697484267498</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697484267498</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed Procfile and Requirements">
+      <option name="closed" value="true" />
+      <created>1697484278631</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697484278631</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed Procfile and Requirements">
+      <option name="closed" value="true" />
+      <created>1697484607919</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697484607919</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed Procfile and Requirements">
+      <option name="closed" value="true" />
+      <created>1697484714336</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697484714336</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697485382057</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697485382057</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697485919917</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697485919917</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697486311770</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697486311770</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697486426643</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697486426643</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697486669127</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697486669127</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697486768389</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697486768389</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697487952902</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697487952902</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697488371439</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697488371439</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697488767163</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1697488767163</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Make Table interactive">
+      <option name="closed" value="true" />
+      <created>1697489244926</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697489244926</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Push to Github">
+      <option name="closed" value="true" />
+      <created>1697493702673</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1697493702673</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Push to Github">
+      <option name="closed" value="true" />
+      <created>1697494104383</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1697494104383</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Cleanup1">
+      <option name="closed" value="true" />
+      <created>1697497164602</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697497164602</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Cleanup1">
+      <option name="closed" value="true" />
+      <created>1697497247363</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697497247363</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Cleanup2">
+      <option name="closed" value="true" />
+      <created>1697497675669</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697497675669</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Cleanup3">
+      <option name="closed" value="true" />
+      <created>1697499366870</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697499366870</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed Procfile and Requirements" />
+    <MESSAGE value="Make Table interactive" />
+    <MESSAGE value="Push to Github" />
+    <MESSAGE value="Cleanup1" />
+    <MESSAGE value="Cleanup2" />
+    <MESSAGE value="Cleanup3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup3" />
+  </component>
+</project>
