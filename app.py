@@ -19,6 +19,9 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Button("Fetch Data", id="fetch-button", color="secondary", className="mb-3"),
+            dbc.Label("Show number of rows"),
+            row_drop := dcc.Dropdown(value=10, clearable=False, style={'width': '35%'},
+                                     options=[10, 25, 50, 100]),
             dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True),
         ])
     ]),
@@ -54,7 +57,7 @@ app.layout = dbc.Container([
                 sort_mode="multi",
                 page_action="native",
                 page_current=0,
-                page_size=10,
+                page_size=05,
             ),
         ])
     ]),
