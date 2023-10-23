@@ -55,7 +55,19 @@ app.layout = dbc.Container([
                 page_action="native",
                 page_current=0,
                 page_size=10,
-            ),
+
+                style_data={
+                    'width': '150px', 'minWidth': '150px', 'maxWidth': '150px',
+                    'overflow': 'hidden',
+                    'textOverflow': 'ellipsis',
+        }
+    ),
+    dbc.Row([
+        dbc.Col([
+            agency_name_drop := dcc.Dropdown([x for x in sorted(df.agency_name.unique())])
+        ], width=3),
+    ], justify="between", className='mt-3 mb-4'),
+
         ])
     ]),
 ], fluid=True)
