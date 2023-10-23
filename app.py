@@ -1,81 +1,64 @@
-import dash
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-from dash.dependencies import Input, Output
-import dash_table
 import requests
+import pandas as pd
 
-# Set up the app with external stylesheets from dash-bootstrap-components
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
-server = app.server  # This is for deployment
-
-# Define the app layout
-app.layout = dbc.Container([
-    dbc.Row([
-        dbc.Col([
-            html.H1("USA Government Spending Data", className="text-center mt-4 mb-4"),
-        ])
-    ]),
-    dbc.Row([
-        dbc.Col([
-            dbc.Button("Fetch Data", id="fetch-button", color="secondary", className="mb-3"),
-            dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True),
-        ])
-    ]),
-    html.Br(),
-    dbc.Row([
-        dbc.Col([
-            dash_table.DataTable(
-                id='datatable',
-                columns=[
-                    {"name": "Agency ID", "id": "agency_id"},
-                    {"name": "Toptier Code", "id": "toptier_code"},
-                    {"name": "Agency Name", "id": "agency_name"},
-                    {"name": "Abbreviation", "id": "abbreviation"},
-                    {"name": "Congressional Justification URL", "id": "congressional_justification_url"},
-                    {"name": "Active FY", "id": "active_fy"},
-                    {"name": "Active FQ", "id": "active_fq"},
-                    {"name": "Outlay Amount", "id": "outlay_amount"},
-                    {"name": "Obligated Amount", "id": "obligated_amount"},
-                    {"name": "Budget Authority Amount", "id": "budget_authority_amount"},
-                    {"name": "Current Total Budget Authority Amount", "id": "current_total_budget_authority_amount"},
-                    {"name": "Percentage of Total Budget Authority", "id": "percentage_of_total_budget_authority"},
-                    {"name": "Agency Slug", "id": "agency_slug"}
-                ],
-                data=[],
-                style_table={
-                    'backgroundColor': 'white',
-                },
-                style_cell={
-                    'backgroundColor': 'white',
-                    'color': 'black',
-                },
-                sort_action="native",
-                sort_mode="multi",
-                page_action="native",
-                page_current=0,
-                page_size=10,
-            ),
-        ])
-    ]),
-], fluid=True)
-
-# Define callback to update table data
-@app.callback(
-    Output('datatable', 'data'),
-    Input('fetch-button', 'n_clicks')
-)
-def update_table(n_clicks):
-    if not n_clicks:
-        return []
-
+def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
+    data = response.json()
+    return pd.DataFrame(data["results"])
 
-    if response.status_code == 200:
-        return response.json()['results']
-    else:
-        return []
 
-if __name__ == '__main__':
-    app.run_server(debug=False)
+import dash
+from dash import html, dcc
+import dash_bootstrap_components as dbc
+from dash.dependencies import Input, Output
+
+# Initialize the Dash app with Bootstrap's COSMO theme
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
+
+# Layout for the data page
+app.layout = html.Div([
+    html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "30px"}),
+    dbc.Row([
+        dbc.Col(dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mb-3")),
+        dbc.Col(dcc.Dropdown(
+            id='row-selector',
+            options=[
+                {'label': '10 Rows', 'value': 10},
+                {'label': '20 Rows', 'value': 20},
+                {'label': 'All Rows', 'value': 'all'}
+            ],
+            value=10,
+            clearable=False
+        ))
+    ]),
+    dbc.Table(id="data-table", style={"fontFamily": "Aptos"}),  # Change fontFamily to your desired font
+])
+
+
+@app.callback(
+    Output("data-table", "children"),
+    [Input("fetch-button", "n_clicks"), Input('row-selector', 'value')]
+)
+def update_table(n_clicks, rows):
+    if n_clicks:
+        df = fetch_data()
+
+        # If specific rows are selected, slice the dataframe
+        if rows != 'all':
+            df = df.head(rows)
+
+        table_header = [
+            html.Thead(html.Tr([html.Th(column) for column in df.columns]))
+        ]
+        table_body = [
+            html.Tbody([
+                html.Tr([html.Td(df.iloc[i][column]) for column in df.columns]) for i in range(len(df))
+            ])
+        ]
+        return table_header + table_body
+    return []
+
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
