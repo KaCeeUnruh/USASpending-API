@@ -19,7 +19,9 @@ server = app.server  # This is for deployment
 
 # Layout for the data page
 app.layout = dbc.Container([
-    html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "40px"}),
+    dbc.Row([
+        dbc.Col([
+            html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "40px"}),
     dbc.Row([
         dbc.Col(dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mb-3")),
         dbc.Col(dcc.Dropdown(
@@ -33,7 +35,29 @@ app.layout = dbc.Container([
             clearable=False
         ))
     ]),
-    dbc.Table(id="data-table", style={"fontFamily": "Balto"}),
+    html.Br(),
+        dbc.Row([
+            dbc.Col([
+                dash_table.DataTable(
+                    id='datatable',
+                    columns=[
+                            {"name": "Agency ID", "id": "agency_id"},
+                            {"name": "Toptier Code", "id": "toptier_code"},
+                            {"name": "Agency Name", "id": "agency_name"},
+                            {"name": "Abbreviation", "id": "abbreviation"},
+                            {"name": "Congressional Justification URL", "id": "congressional_justification_url"},
+                            {"name": "Active FY", "id": "active_fy"},
+                            {"name": "Active FQ", "id": "active_fq"},
+                            {"name": "Outlay Amount", "id": "outlay_amount"},
+                            {"name": "Obligated Amount", "id": "obligated_amount"},
+                            {"name": "Budget Authority Amount", "id": "budget_authority_amount"},
+                            {"name": "Current Total Budget Authority Amount",
+                             "id": "current_total_budget_authority_amount"},
+                            {"name": "Percentage of Total Budget Authority",
+                             "id": "percentage_of_total_budget_authority"},
+                            {"name": "Agency Slug", "id": "agency_slug"}
+                        ],
+                    style={"fontFamily": "Balto"}),
 ])
 
 
@@ -41,24 +65,6 @@ app.layout = dbc.Container([
     Output("data-table", "children"),
     [Input("fetch-button", "n_clicks"), Input('row-selector', 'value')]
 )
-def update_table(n_clicks, rows):
-    if n_clicks:
-        df = fetch_data()
-
-        # If specific rows are selected, slice the dataframe
-        if rows != 'all':
-            df = df.head(rows)
-
-        table_header = [
-            html.Thead(html.Tr([html.Th(column) for column in df.columns]))
-        ]
-        table_body = [
-            html.Tbody([
-                html.Tr([html.Td(df.iloc[i][column]) for column in df.columns]) for i in range(len(df))
-            ])
-        ]
-        return table_header + table_body
-    return []
 
 
 if __name__ == "__main__":
