@@ -57,7 +57,7 @@ app.layout = dbc.Container([
                 sort_mode="multi",
                 page_action="native",
                 page_current=0,
-                page_size=05,
+                page_size=10,
             ),
         ])
     ]),
