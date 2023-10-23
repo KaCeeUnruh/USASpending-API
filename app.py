@@ -12,7 +12,23 @@ def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
     data = response.json()
-    return pd.DataFrame(data['results'])
+    df = pd.DataFrame(data['results'])
+    df = df.rename(columns={
+        "agency_id": "Agency ID",
+        "toptier_code": "Toptier Code",
+        "agency_name": "Agency Name",
+        "abbreviation": "Abbreviation",
+        "congressional_justification_url": "Congressional Justification URL",
+        "active_fy": "Active FY",
+        "active_fq": "Active FQ",
+        "outlay_amount": "Outlay Amount",
+        "obligated_amount": "Obligated Amount",
+        "budget_authority_amount": "Budget Authority Amount",
+        "current_total_budget_authority_amount": "Current Total Budget Authority Amount",
+        "percentage_of_total_budget_authority": "Percentage of Total Budget Authority",
+        "agency_slug": "Agency Slug"
+    })
+    return df
 
 # Initialize the Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
@@ -20,7 +36,7 @@ server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
 app.layout = html.Div([
-    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 24}),
+    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 40}),
     dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
     dash_table.DataTable(
         id='data-table',
