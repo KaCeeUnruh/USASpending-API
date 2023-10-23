@@ -6,16 +6,32 @@ from dash.dependencies import Input, Output
 import requests
 import pandas as pd
 
-# Define the function to fetch data
+# Define the function to fetch data and change column names
 def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
     data = response.json()
-    return pd.DataFrame(data['results'])
+    df = pd.DataFrame(data['results'])
+    df = df.rename(columns={
+        "agency_id": "Agency ID",
+        "toptier_code": "Toptier Code",
+        "agency_name": "Agency Name",
+        "abbreviation": "Abbreviation",
+        "congressional_justification_url": "Congressional Justification URL",
+        "active_fy": "Active FY",
+        "active_fq": "Active FQ",
+        "outlay_amount": "Outlay Amount",
+        "obligated_amount": "Obligated Amount",
+        "budget_authority_amount": "Budget Authority Amount",
+        "current_total_budget_authority_amount": "Current Total Budget Authority Amount",
+        "percentage_of_total_budget_authority": "Percentage of Total Budget Authority",
+        "agency_slug": "Agency Slug"
+    })
+    return df
 
 # Initialize the Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
-server = app.server  # This is needed for Heroku deployment
+server = app.server
 
 # Define the app layout
 app.layout = html.Div([
