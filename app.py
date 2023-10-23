@@ -15,6 +15,7 @@ from dash.dependencies import Input, Output
 
 # Initialize the Dash app with Bootstrap's COSMO theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
+server = app.server  # This is for deployment
 
 # Layout for the data page
 app.layout = html.Div([
