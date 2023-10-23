@@ -35,8 +35,9 @@ server = app.server
 
 # Define the app layout
 app.layout = html.Div([
-    html.H1("USA Government Spending", style={"textAlign": "center"}),
+    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 40}),
     dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
+    dcc.Dropdown(id='page-dropdown', options=[{'label': str(i), 'value': i} for i in range(1, 11)], value=1),
     dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True),
 ])
 
