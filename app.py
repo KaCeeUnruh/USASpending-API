@@ -38,14 +38,15 @@ app.layout = html.Div([
     html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 40}),
     dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
     dcc.Dropdown(id='page-dropdown', options=[{'label': str(i), 'value': i} for i in range(1, 11)], value=1),
-    dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True),
+    dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True, style={"fontSize": 12}),
 ])
 
 # Define callback to update table
 @app.callback(
     Output("data-table", "children"),
-    Input("fetch-button", "n_clicks")
+    [Input("fetch-button", "n_clicks"), Input("page-dropdown", "value")]
 )
+
 def update_table(n_clicks):
     if n_clicks:
         df = fetch_data()
