@@ -6,7 +6,7 @@ import dash_table
 import requests
 
 # Set up the app with external stylesheets from dash-bootstrap-components
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
 server = app.server  # This is for deployment
 
 # Define the app layout
