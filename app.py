@@ -18,7 +18,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
 
 # Layout for the data page
 app.layout = html.Div([
-    html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "30px"}),
+    html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "40px"}),
     dbc.Row([
         dbc.Col(dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mb-3")),
         dbc.Col(dcc.Dropdown(
@@ -32,7 +32,7 @@ app.layout = html.Div([
             clearable=False
         ))
     ]),
-    dbc.Table(id="data-table", style={"fontFamily": "Aptos"}),  # Change fontFamily to your desired font
+    dbc.Table(id="data-table", style={"fontFamily": "Balto"}),
 ])
 
 
