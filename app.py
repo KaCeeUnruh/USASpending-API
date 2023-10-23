@@ -47,13 +47,17 @@ app.layout = html.Div([
     [Input("fetch-button", "n_clicks"), Input("page-dropdown", "value")]
 )
 
-def update_table(n_clicks):
+def update_table(n_clicks, page_number):
     if n_clicks:
         df = fetch_data()
         # Implementing basic pagination
-        rows_per_page = 10
+        rows_per_page = 10  # Assuming 10 rows per page
+        start_idx = (page_number - 1) * rows_per_page
+        end_idx = start_idx + rows_per_page
+        df_page = df.iloc[start_idx:end_idx]
         table_header = [html.Thead(html.Tr([html.Th(column) for column in df.columns]))]
-        table_body = [html.Tbody([html.Tr([html.Td(df.iloc[i][column]) for column in df.columns]) for i in range(len(df))])]
+        table_body = [html.Tbody(
+            [html.Tr([html.Td(df_page.iloc[i][column]) for column in df.columns]) for i in range(len(df_page))])]
         return table_header + table_body
     return []
 
