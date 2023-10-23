@@ -1,5 +1,6 @@
 # Import necessary libraries
 import dash
+import dash_table
 import dash_bootstrap_components as dbc
 from dash import dcc, html
 from dash.dependencies import Input, Output
@@ -37,8 +38,11 @@ server = app.server
 app.layout = html.Div([
     html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 40}),
     dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
-    dcc.Dropdown(id='page-dropdown', options=[{'label': str(i), 'value': i} for i in range(1, 11)], value=1),
-    dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True, style={"fontSize": 12}),
+    dash_table.DataTable(
+        id='data-table',
+        columns=[{'name': i, 'id': i} for i in []], # Initially empty
+        page_size=10,  # Number of rows per page
+        style_table={'fontSize': 12},
 ])
 
 # Define callback to update table
