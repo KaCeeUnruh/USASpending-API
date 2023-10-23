@@ -1,7 +1,8 @@
 import requests
 import pandas as pd
 import dash
-from dash import html, dcc
+from dash import dcc
+import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import dash_table
