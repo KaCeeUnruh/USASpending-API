@@ -1,101 +1,42 @@
+# Import necessary libraries
+import dash
+import dash_bootstrap_components as dbc
+from dash import dcc, html
+from dash.dependencies import Input, Output
 import requests
 import pandas as pd
-import dash
-from dash import dcc
-import dash_html_components as html
-import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
-import dash_table
 
-
+# Define the function to fetch data
 def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
     data = response.json()
-    return pd.DataFrame(data["results"])
+    return pd.DataFrame(data['results'])
 
-# Initialize the Dash app with Bootstrap's COSMO theme
+# Initialize the Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
-server = app.server  # This is for deployment
+server = app.server  # This is needed for Heroku deployment
 
-# Layout for the data page
-app.layout = dbc.Container([
-    dbc.Row([
-        dbc.Col([
-            html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "40px"}),
-    dbc.Row([
-        dbc.Col(dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mb-3")),
-        dbc.Col(dcc.Dropdown(
-            id='row-selector',
-            options=[
-                {'label': '10 Rows', 'value': 10},
-                {'label': '20 Rows', 'value': 20},
-                {'label': 'All Rows', 'value': 'all'}
-            ],
-            value=10,
-            clearable=False
-        ))
-    ]),
-    html.Br(),
-        dbc.Row([
-            dbc.Col([
-                dash_table.DataTable(
-                    id='datatable',
-                    columns=[
-                            {"name": "Agency ID", "id": "agency_id"},
-                            {"name": "Toptier Code", "id": "toptier_code"},
-                            {"name": "Agency Name", "id": "agency_name"},
-                            {"name": "Abbreviation", "id": "abbreviation"},
-                            {"name": "Congressional Justification URL", "id": "congressional_justification_url"},
-                            {"name": "Active FY", "id": "active_fy"},
-                            {"name": "Active FQ", "id": "active_fq"},
-                            {"name": "Outlay Amount", "id": "outlay_amount"},
-                            {"name": "Obligated Amount", "id": "obligated_amount"},
-                            {"name": "Budget Authority Amount", "id": "budget_authority_amount"},
-                            {"name": "Current Total Budget Authority Amount",
-                             "id": "current_total_budget_authority_amount"},
-                            {"name": "Percentage of Total Budget Authority",
-                             "id": "percentage_of_total_budget_authority"},
-                            {"name": "Agency Slug", "id": "agency_slug"}
-                        ],
-                    style={"fontFamily": "Balto"},
-                    data=[],
-                    style_table={
-                    'backgroundColor': 'white',
-                    },
-                    style_cell={
-                    'backgroundColor': 'white',
-                    'color': 'black',
-                },
-                sort_action="native",
-                sort_mode="multi",
-                page_action="native",
-                page_current=0,
-                page_size=10,
-            ),
-],
-fluid=True)
-
+# Define the app layout
+app.layout = html.Div([
+    html.H1("USA Government Spending", style={"textAlign": "center"}),
+    dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
+    dbc.Table(id="data-table", bordered=True, striped=True, hover=True, responsive=True),
 ])
 
-
+# Define callback to update table
 @app.callback(
     Output("data-table", "children"),
-    [Input("fetch-button", "n_clicks"), Input('row-selector', 'value')]
+    Input("fetch-button", "n_clicks")
 )
-
 def update_table(n_clicks):
-    if not n_clicks:
-        return []
+    if n_clicks:
+        df = fetch_data()
+        table_header = [html.Thead(html.Tr([html.Th(column) for column in df.columns]))]
+        table_body = [html.Tbody([html.Tr([html.Td(df.iloc[i][column]) for column in df.columns]) for i in range(len(df))])]
+        return table_header + table_body
+    return []
 
-    url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        return response.json()['results']
-    else:
-        return []
-
-
+# Run the app
 if __name__ == "__main__":
     app.run_server(debug=True)
