@@ -83,6 +83,18 @@ fluid=True)
     [Input("fetch-button", "n_clicks"), Input('row-selector', 'value')]
 )
 
+def update_table(n_clicks):
+    if not n_clicks:
+        return []
+
+    url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        return response.json()['results']
+    else:
+        return []
+
 
 if __name__ == "__main__":
     app.run_server(debug=True)
