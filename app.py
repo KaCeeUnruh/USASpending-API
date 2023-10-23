@@ -43,11 +43,11 @@ app.layout = dbc.Container([
                 ],
                 data=[],
                 style_table={
-                    'backgroundColor': 'grey',
+                    'backgroundColor': 'white',
                 },
                 style_cell={
-                    'backgroundColor': 'grey',
-                    'color': 'white',
+                    'backgroundColor': 'white',
+                    'color': 'black',
                 },
                 filter_action="native",
                 sort_action="native",
