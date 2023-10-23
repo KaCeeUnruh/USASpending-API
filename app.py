@@ -18,7 +18,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
 server = app.server  # This is for deployment
 
 # Layout for the data page
-app.layout = html.Div([
+app.layout = dbc.Container([
     html.H1("USA Government Spending", style={"textAlign": "center", "marginBottom": "40px"}),
     dbc.Row([
         dbc.Col(dbc.Button("Fetch Data", id="fetch-button", color="primary", className="mb-3")),
