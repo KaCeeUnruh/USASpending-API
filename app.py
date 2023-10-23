@@ -1,17 +1,17 @@
 import requests
 import pandas as pd
+import dash
+from dash import html, dcc
+import dash_bootstrap_components as dbc
+from dash.dependencies import Input, Output
+import dash_table
+
 
 def fetch_data():
     url = "https://api.usaspending.gov/api/v2/references/toptier_agencies/"
     response = requests.get(url)
     data = response.json()
     return pd.DataFrame(data["results"])
-
-
-import dash
-from dash import html, dcc
-import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
 
 # Initialize the Dash app with Bootstrap's COSMO theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
