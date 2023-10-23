@@ -57,7 +57,24 @@ app.layout = dbc.Container([
                              "id": "percentage_of_total_budget_authority"},
                             {"name": "Agency Slug", "id": "agency_slug"}
                         ],
-                    style={"fontFamily": "Balto"}),
+                    style={"fontFamily": "Balto"},
+                    data=[],
+                    style_table={
+                    'backgroundColor': 'white',
+                    },
+                    style_cell={
+                    'backgroundColor': 'white',
+                    'color': 'black',
+                },
+                sort_action="native",
+                sort_mode="multi",
+                page_action="native",
+                page_current=0,
+                page_size=10,
+            ),
+],
+fluid=True)
+
 ])
 
 
