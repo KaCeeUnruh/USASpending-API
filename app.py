@@ -50,7 +50,6 @@ app.layout = dbc.Container([
                     'backgroundColor': 'white',
                     'color': 'black',
                 },
-                filter_action="native",
                 sort_action="native",
                 sort_mode="multi",
                 page_action="native",
