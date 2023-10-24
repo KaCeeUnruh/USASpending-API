@@ -31,13 +31,13 @@ def fetch_data():
     return df
 
 # Initialize the Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH, dbc_css])
 server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
 app.layout = html.Div([
     html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 50}),
-    dbc.Button("Fetch Data", id="fetch-button", className="mb-3", "textAlign": "center"),
+    dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
     dash_table.DataTable(
         id='data-table',
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
