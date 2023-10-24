@@ -38,18 +38,18 @@ server = app.server  # This is needed for Heroku deployment
 app.layout = html.Div([
     html.H1("USA Government Spending",
         style={"textAlign": "center", "fontSize": 50, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
-    html.H3("This table shows the respective budgets of various US government agencies as indexed by USASpending.gov.",
+    html.H4("This table shows the respective budgets of various US government agencies as indexed by USASpending.gov.",
         style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dbc.Button("Fetch Data",
         id="fetch-button",
-        className="mb-3",
+        className="btn-block",
         style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dash_table.DataTable(
         id='data-table',
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
-        style_table={'fontSize': 12},
+        style_table={'fontSize': 12, 'overflowY': 'auto'},
         style_data={
             'color': 'rgb(51, 61, 90)',
             'backgroundColor': 'white'
