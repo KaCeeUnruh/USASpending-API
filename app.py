@@ -42,12 +42,11 @@ app.layout = html.Div([
         id='data-table',
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
-        style_cell={'textAlign': 'left'},
+        style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
         style_table={'fontSize': 12},
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
-            'fontFamily': 'Times New Roman'
          },
         style_data_conditional=[
             {
