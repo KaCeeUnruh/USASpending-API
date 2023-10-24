@@ -44,6 +44,7 @@ app.layout = html.Div([
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
         style_table={'fontSize': 12},
+        className='text-wrap',
         style_data={
             'color': 'rgb(51, 61, 90)',
             'backgroundColor': 'white'
