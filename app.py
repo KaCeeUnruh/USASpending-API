@@ -43,7 +43,7 @@ app.layout = html.Div([
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left'},
-        style_table={'fontSize': 12, 'font_family': 'Arial'},
+        style_table={'fontSize': 12, 'font_family': 'Times New Roman'},
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
