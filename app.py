@@ -45,18 +45,18 @@ app.layout = html.Div([
         style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
         style_table={'fontSize': 12},
         style_data={
-            'color': 'black',
+            'color': 'rgb(118, 130, 169)',
             'backgroundColor': 'white'
          },
         style_data_conditional=[
             {
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'transparent',
+            'backgroundColor': 'rgb(250, 250, 250)',
             }
         ],
         style_header={
-            'backgroundColor': 'rgb(220, 220, 220)',
-            'color': 'black',
+            'backgroundColor': 'rgb(230, 230, 230)',
+            'color': 'rgb(118, 130, 169)',
             'fontWeight': 'bold',
             'fontFamily': 'Times New Roman'
             }
