@@ -54,6 +54,7 @@ app.layout = html.Div([
             'color': 'rgb(51, 61, 90)',
             'backgroundColor': 'white'
          },
+        sort_action="native",
         sort_mode="multi",
         style_data_conditional=[
             {
