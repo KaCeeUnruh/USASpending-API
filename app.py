@@ -2,7 +2,7 @@
 import dash
 import dash_table
 import dash_bootstrap_components as dbc
-from dash import dcc, html
+from dash import html
 from dash.dependencies import Input, Output
 import requests
 import pandas as pd
@@ -63,7 +63,7 @@ app.layout = html.Div([
             'color': 'rgb(51, 61, 90)',
             'fontWeight': 'bold',
             'fontFamily': 'Times New Roman'
-            'fontSize': 16
+            'fontSize': 14
             }
     ),
 ])
