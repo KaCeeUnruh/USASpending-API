@@ -47,7 +47,6 @@ app.layout = html.Div([
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
-            'fontFamily': 'Arial'
          },
         style_data_conditional=[
             {
@@ -59,7 +58,6 @@ app.layout = html.Div([
             'backgroundColor': 'rgb(220, 220, 220)',
             'color': 'black',
             'fontWeight': 'bold'
-            'fontFamily': 'Arial'
             }
     ),
 ])
