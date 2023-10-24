@@ -38,7 +38,7 @@ server = app.server  # This is needed for Heroku deployment
 app.layout = html.Div([
     html.H1("USA Government Spending",
         style={"textAlign": "center", "fontSize": 50, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
-    html.H4("This table shows the respective budgets of various US government agencies as indexed by USASpending.gov.",
+    html.H5("This table shows the respective budgets of various US government agencies as indexed by USASpending.gov.",
         style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dbc.Button("Fetch Data",
         id="fetch-button",
