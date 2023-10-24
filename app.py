@@ -47,6 +47,7 @@ app.layout = html.Div([
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
+            'fontFamily': 'Times New Roman'
          },
         style_data_conditional=[
             {
