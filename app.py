@@ -43,7 +43,7 @@ app.layout = html.Div([
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left'},
-        style_table={'fontSize': 12, 'fontFamily': 'Franklin Gothic'},
+        style_table={'fontSize': 12, 'fontFamily': 'Tahoma'},
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
@@ -51,11 +51,11 @@ app.layout = html.Div([
         style_data_conditional=[
             {
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(210, 210, 210)',
+            'backgroundColor': 'rgb(260, 260, 260)',
             }
         ],
         style_header={
-            'backgroundColor': 'rgb(200, 200, 200)',
+            'backgroundColor': 'rgb(230, 230, 230)',
             'color': 'black',
             'fontWeight': 'bold'
             }
