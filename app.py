@@ -47,6 +47,7 @@ app.layout = html.Div([
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
+            'font_family': "Courier New",
          },
         style_data_conditional=[
             {
