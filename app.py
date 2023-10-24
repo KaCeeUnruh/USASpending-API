@@ -31,7 +31,7 @@ def fetch_data():
     return df
 
 # Initialize the Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH, dbc_css])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
 server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
