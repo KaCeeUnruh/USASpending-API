@@ -36,14 +36,14 @@ server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
 app.layout = html.Div([
-    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 50}),
+    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 50, "fontFamily": 'Times New Roman'}),
     dbc.Button("Fetch Data", id="fetch-button", className="mb-3"),
     dash_table.DataTable(
         id='data-table',
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left'},
-        style_table={'fontSize': 12, 'fontFamily': 'Times New Roman'},
+        style_table={'fontSize': 12},
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
@@ -57,7 +57,8 @@ app.layout = html.Div([
         style_header={
             'backgroundColor': 'rgb(220, 220, 220)',
             'color': 'black',
-            'fontWeight': 'bold'
+            'fontWeight': 'bold',
+            'fontFamily': 'Times New Roman'
             }
     ),
 ])
