@@ -31,7 +31,7 @@ def fetch_data():
     return df
 
 # Initialize the Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
 server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
@@ -43,7 +43,7 @@ app.layout = html.Div([
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left'},
-        style_table={'fontSize': 12, 'font_family': 'Times New Roman'},
+        style_table={'fontSize': 12, 'fontFamily': 'Times New Roman'},
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
