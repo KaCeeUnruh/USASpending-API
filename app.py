@@ -36,8 +36,8 @@ server = app.server  # This is needed for Heroku deployment
 
 # Define the app layout
 app.layout = html.Div([
-    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 50, "fontFamily": 'Times New Roman', 'color': 'rgb(88, 99, 133)'}),
-    dbc.Button("Fetch Data", id="fetch-button", className="mb-3", style={"textAlign": "center", "fontSize": 20, "fontFamily": 'Times New Roman'}),
+    html.H1("USA Government Spending", style={"textAlign": "center", "fontSize": 50, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
+    dbc.Button("Fetch Data", id="fetch-button", className="mb-3", style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dash_table.DataTable(
         id='data-table',
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
@@ -45,18 +45,18 @@ app.layout = html.Div([
         style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
         style_table={'fontSize': 12},
         style_data={
-            'color': 'rgb(88, 99, 133)',
+            'color': 'rgb(51, 61, 90)',
             'backgroundColor': 'white'
          },
         style_data_conditional=[
             {
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(250, 250, 250)',
+            'backgroundColor': 'rgb(240, 240, 240)',
             }
         ],
         style_header={
             'backgroundColor': 'rgb(230, 230, 230)',
-            'color': 'rgb(88, 99, 133)',
+            'color': 'rgb(51, 61, 90)',
             'fontWeight': 'bold',
             'fontFamily': 'Times New Roman'
             }
