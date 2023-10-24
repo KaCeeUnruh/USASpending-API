@@ -51,11 +51,11 @@ app.layout = html.Div([
         style_data_conditional=[
             {
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(220, 220, 220)',
+            'backgroundColor': 'rgb(210, 210, 210)',
             }
         ],
         style_header={
-            'backgroundColor': 'rgb(210, 210, 210)',
+            'backgroundColor': 'rgb(200, 200, 200)',
             'color': 'black',
             'fontWeight': 'bold'
             }
