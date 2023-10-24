@@ -45,7 +45,7 @@ app.layout = html.Div([
         style_cell={'textAlign': 'left', 'fontFamily': 'Times New Roman'},
         style_table={'fontSize': 12},
         style_data={
-            'color': 'rgb(72, 87, 133)',
+            'color': 'rgb(72, 87, 150)',
             'backgroundColor': 'white'
          },
         style_data_conditional=[
@@ -56,7 +56,7 @@ app.layout = html.Div([
         ],
         style_header={
             'backgroundColor': 'rgb(230, 230, 230)',
-            'color': 'rgb(72, 87, 133)',
+            'color': 'rgb(72, 87, 150)',
             'fontWeight': 'bold',
             'fontFamily': 'Times New Roman'
             }
