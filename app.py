@@ -42,7 +42,7 @@ app.layout = html.Div([
         style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dbc.Button("Fetch Data",
         id="fetch-button",
-        className="mb-3", "align-items-center",
+        className="mb-3",
         style={"textAlign": "center", "fontSize": 20, "fontFamily": "Times New Roman", "color": "rgb(51, 61, 90)"}),
     dash_table.DataTable(
         id='data-table',
