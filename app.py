@@ -62,8 +62,7 @@ app.layout = html.Div([
             'backgroundColor': 'rgb(230, 230, 230)',
             'color': 'rgb(51, 61, 90)',
             'fontWeight': 'bold',
-            'fontFamily': 'Times New Roman'
-            'fontSize': 15,
+            'fontFamily': 'Times New Roman',
             }
     ),
 ])
