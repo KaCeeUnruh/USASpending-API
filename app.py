@@ -47,17 +47,20 @@ app.layout = html.Div([
         style_data={
             'color': 'black',
             'backgroundColor': 'white'
+            'fontFamily': 'Arial'
          },
         style_data_conditional=[
             {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(240, 240, 240)',
+            'fontFamily': 'Arial'
             }
         ],
         style_header={
             'backgroundColor': 'rgb(220, 220, 220)',
             'color': 'black',
             'fontWeight': 'bold'
+            'fontFamily': 'Arial'
             }
     ),
 ])
