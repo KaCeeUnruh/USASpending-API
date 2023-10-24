@@ -53,7 +53,6 @@ app.layout = html.Div([
             {
             'if': {'row_index': 'odd'},
             'backgroundColor': 'rgb(240, 240, 240)',
-            'fontFamily': 'Arial'
             }
         ],
         style_header={
