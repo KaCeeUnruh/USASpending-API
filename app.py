@@ -43,7 +43,22 @@ app.layout = html.Div([
         columns=[{'name': i, 'id': i} for i in []], # Initially empty
         page_size=10,  # Number of rows per page
         style_cell={'textAlign': 'left'},
-        style_table={'fontSize': 12, 'fontFamily': 'Baltic'},
+        style_table={'fontSize': 12, 'fontFamily': 'Franklin Gothic'},
+        style_data={
+            'color': 'black',
+            'backgroundColor': 'white'
+         },
+        style_data_conditional=[
+            {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(220, 220, 220)',
+            }
+        ],
+        style_header={
+            'backgroundColor': 'rgb(210, 210, 210)',
+            'color': 'black',
+            'fontWeight': 'bold'
+            }
     ),
 ])
 
